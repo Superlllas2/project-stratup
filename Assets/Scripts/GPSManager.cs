@@ -22,7 +22,7 @@ public class GPSManager : MonoBehaviour
         }
 
         // Start the location service
-        Input.location.Start();
+        Input.location.Start(desiredAccuracyInMeters: 1, updateDistanceInMeters: 1f);
 
         // Wait until the service initializes
         var maxWait = 20;

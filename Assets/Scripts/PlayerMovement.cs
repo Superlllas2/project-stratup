@@ -8,10 +8,10 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         // Get the input from the joystick
-        Vector2 inputDirection = joystick.InputDirection;
+        var inputDirection = joystick.InputDirection;
 
         // Move the player based on the input
-        Vector3 moveDirection = new Vector3(inputDirection.x, 0, inputDirection.y);
+        var moveDirection = new Vector3(inputDirection.x, 0, inputDirection.y);
         transform.Translate(moveDirection * speed * Time.deltaTime, Space.World);
     }
 }
