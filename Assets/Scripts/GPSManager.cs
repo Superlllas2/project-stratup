@@ -10,7 +10,26 @@ public class GPSManager : MonoBehaviour
     public TMP_Text longitudeText;
     public TMP_Text altitudeText;
     public TMP_Text accuracyText;
+    
+    public static GPSManager Instance { get; private set; }
+    public float Latitude { get; private set; }
+    public float Longitude { get; private set; }
 
+    private void Awake()
+    {
+        // Ensure that only one instance of GPSManager exists
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject); // Destroy duplicate instances
+        }
+        else
+        {
+            Instance = this; // Set singleton instance
+        }
+
+        DontDestroyOnLoad(gameObject); // Keep GPSManager alive across scenes
+    }
+    
     IEnumerator Start()
     {
         // Check if the device supports location services
