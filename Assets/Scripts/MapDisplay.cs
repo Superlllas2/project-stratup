@@ -9,7 +9,7 @@ public class MapDisplay : MonoBehaviour
     public string mapCenter = "Enschede"; // The location you want to center the map on
     public int zoomLevel = 15; // Zoom level for the map
     public int mapSize = 2048; // Size of the map image (2048x2048 for higher quality)
-    public int maxSize = 6400; // Max size for high-resolution maps (Google's limit)
+    // public int maxSize = 6400; // Max size for high-resolution maps (Google's limit)
 
     private Renderer mapRenderer;
 
