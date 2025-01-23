@@ -70,7 +70,7 @@ public class MapDisplay : MonoBehaviour
     // Download the map image from Google Static Maps API
     private IEnumerator DownloadMap(string center)
     {
-        var url = $"https://maps.googleapis.com/maps/api/staticmap?center={center}&zoom={zoomLevel}&size={mapSize}x{mapSize}&maptype=roadmap&style={UnityWebRequest.EscapeURL(customMapStyle)}&key={apiKey}";
+        var url = $"https://maps.googleapis.com/maps/api/staticmap?center={center}&zoom={zoomLevel}&size={mapSize}x{mapSize}&maptype=roadmap&style={UnityWebRequest.EscapeURL(customMapStyle)}&key={apiKey}&map_id=fc16fcc5b49a1b83";
 
         using (WWW www = new WWW(url))
         {
