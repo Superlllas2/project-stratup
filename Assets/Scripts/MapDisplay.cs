@@ -26,7 +26,9 @@ public class MapDisplay : MonoBehaviour
             return;
         }
 
-        if (GPSManager.Instance)
+        // TODO: return this when building for phone
+        // if (GPSManager.Instance)
+        if (false)
         {
             float latitude = GPSManager.Instance.Latitude;
             float longitude = GPSManager.Instance.Longitude;

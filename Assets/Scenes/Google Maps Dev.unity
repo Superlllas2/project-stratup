@@ -265,14 +265,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2572204818957799868, guid: 8c81abdc4a36a40caa2e16355511233d, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2572204818957799868, guid: 8c81abdc4a36a40caa2e16355511233d, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2572204818957799868, guid: 8c81abdc4a36a40caa2e16355511233d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -311,18 +303,6 @@ PrefabInstance:
     - target: {fileID: 2572204818957799868, guid: 8c81abdc4a36a40caa2e16355511233d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4398999385446409530, guid: 8c81abdc4a36a40caa2e16355511233d, type: 3}
-      propertyPath: mapSize
-      value: 10000
-      objectReference: {fileID: 0}
-    - target: {fileID: 4398999385446409530, guid: 8c81abdc4a36a40caa2e16355511233d, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4398999385446409530, guid: 8c81abdc4a36a40caa2e16355511233d, type: 3}
-      propertyPath: zoomLevel
-      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6991819588538107222, guid: 8c81abdc4a36a40caa2e16355511233d, type: 3}
       propertyPath: m_Name
