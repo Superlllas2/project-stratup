@@ -2,6 +2,20 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
+public class InventoryItem
+{
+    public string itemName; // Name of the item
+    public int quantity;    // Quantity of this item in the inventory
+
+    // Constructor to initialize a new inventory item
+    public InventoryItem(string name, int qty)
+    {
+        itemName = name;
+        quantity = qty;
+    }
+}
+
 public class Item : MonoBehaviour
 {
     public bool isCollected = false;  // Track if the item is collected
@@ -14,14 +28,15 @@ public class Item : MonoBehaviour
     private Transform playerTransform; // Reference to the player's transform
     public GameObject pickupUI;        // The UI panel that will show the "Pick Up" button
     public Button pickupButton;        // The "Pick Up" button
-    public Inventory inventory;        // Reference to the player’s inventory
+    private Inventory inventory;        // Reference to the player’s inventory
     private Renderer itemRenderer;
 
     void Start()
     {
         // Find the player object and get its transform
         playerTransform = GameObject.FindWithTag("Player").transform;
-        Debug.Log(playerTransform);
+        
+        inventory = playerTransform.GetComponent<Inventory>(); 
         
         // Initially hide the "Pick Up" UI
         pickupUI.SetActive(false);
@@ -72,7 +87,7 @@ public class Item : MonoBehaviour
     void PickUpItem()
     {
         // Add the item to the inventory (stacks if already present)
-        inventory.AddItem(this);
+        inventory?.AddItem(this);
         
         // Mark the item as collected
         isCollected = true;
@@ -86,7 +101,7 @@ public class Item : MonoBehaviour
         Destroy(gameObject);  // Remove the item from the world after pickup
     }
  
-    bool IsClickOnItem()
+    private static bool IsClickOnItem()
     {
         RaycastHit hit;
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);  // Create a ray from the camera to the mouse position

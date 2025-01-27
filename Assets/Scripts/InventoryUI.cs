@@ -31,11 +31,11 @@ public class InventoryUI : MonoBehaviour
         }
 
         // Add buttons for each item in the inventory
-        foreach (Item item in inventory.items)
+        foreach (InventoryItem item in inventory.items)
         {
-            GameObject itemButton = Instantiate(itemButtonPrefab, itemListParent);
+            var itemButton = Instantiate(itemButtonPrefab, itemListParent);
             itemButton.GetComponentInChildren<Text>().text = $"{item.itemName} x{item.quantity}";  // Display item name and quantity
-            itemButton.GetComponent<Button>().onClick.AddListener(() => UseItem(item)); // Add functionality to use the item
+            // itemButton.GetComponent<Button>().onClick.AddListener(() => UseItem(item)); // Add functionality to use the item
         }
     }
 
@@ -44,7 +44,7 @@ public class InventoryUI : MonoBehaviour
     {
         Debug.Log($"Used: {item.itemName}");
         // Implement the item usage functionality here (e.g., healing the player)
-        inventory.RemoveItem(item);  // Optionally remove the item after use
+        // inventory.RemoveItem(item);  // Optionally remove the item after use
         UpdateInventoryUI(); // Update UI after usage
     }
 }
