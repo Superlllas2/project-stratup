@@ -1,8 +1,15 @@
 using UnityEngine;
+using UnityEngine.InputSystem.HID;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    public Button settingsButton;
+    public Button craftButton;
+    public Button inventoryButton;
+    public Button charButton;
+    
     public GameObject startingCanvas;  // Reference to the starting UI canvas
     public GameObject mainCanvas;
     public GameObject inventoryScreen; // Inventory panel
