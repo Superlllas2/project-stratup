@@ -5,6 +5,10 @@ public class UIManager : MonoBehaviour
 {
     public GameObject startingCanvas;  // Reference to the starting UI canvas
     public GameObject mainCanvas;
+    public GameObject inventoryScreen; // Inventory panel
+    public GameObject craftingScreen;  // Crafting panel
+    public GameObject characterScreen;
+    public GameObject settingsScreen;
     public string sceneToLoad;         // The scene to load after the delay (in the build settings)
 
     void Start()
@@ -14,9 +18,58 @@ public class UIManager : MonoBehaviour
         mainCanvas.SetActive(false);
 
         // Start the scene transition after a delay
-        Invoke("LoadGameUI", 3f);  // 2 seconds delay before loading the next scene
+        Invoke("LoadGameUI", 1f);  // 2 seconds delay before loading the next scene
+    }
+    
+    public void ShowMainMenu()
+    {
+        mainCanvas.SetActive(true);
+        startingCanvas.SetActive(false);
+        inventoryScreen.SetActive(false);
+        craftingScreen.SetActive(false);
+        // characterScreen?.SetActive(false);
+        // settingsScreen.SetActive(false);
     }
 
+    public void ShowInventory()
+    {
+        mainCanvas.SetActive(false);
+        inventoryScreen.SetActive(true);
+        craftingScreen.SetActive(false);
+        // characterScreen?.SetActive(false);
+        // settingsScreen.SetActive(false);
+    }
+
+    // Show the crafting screen and hide others
+    public void ShowCrafting()
+    {
+        mainCanvas.SetActive(false);
+        inventoryScreen.SetActive(false);
+        craftingScreen.SetActive(true);
+        // characterScreen?.SetActive(false);
+        // settingsScreen.SetActive(false);
+    }
+
+    // Show the character customization screen and hide others
+    public void ShowCharacterCustomization()
+    {
+        mainCanvas.SetActive(false);
+        inventoryScreen.SetActive(false);
+        craftingScreen.SetActive(false);
+        // characterScreen?.SetActive(true);
+        // settingsScreen.SetActive(false);
+    }    
+    
+    // Show the character customization screen and hide others
+    public void ShowSettingsScreen()
+    {
+        mainCanvas.SetActive(false);
+        inventoryScreen.SetActive(false);
+        craftingScreen.SetActive(false);
+        // characterScreen?.SetActive(false);
+        // settingsScreen.SetActive(true);
+    }
+    
     // Function to load the next scene
     private void LoadNextScene()
     {
@@ -29,7 +82,6 @@ public class UIManager : MonoBehaviour
 
     private void LoadGameUI()
     {
-        startingCanvas.SetActive(false);
-        mainCanvas.SetActive(true);
+        ShowMainMenu();
     }
 }
