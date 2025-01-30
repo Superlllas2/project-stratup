@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 [System.Serializable]
@@ -86,19 +87,20 @@ public class Item : MonoBehaviour
     // Function to pick up the item
     void PickUpItem()
     {
-        // Add the item to the inventory (stacks if already present)
-        inventory?.AddItem(this);
-        
-        // Mark the item as collected
-        isCollected = true;
-
-        // Hide the UI and destroy the item in the scene
-        pickupUI.SetActive(false);
-        if (itemRenderer)
-        {
-            itemRenderer.enabled = false;  // Hide the item when picked up
-        }
-        Destroy(gameObject);  // Remove the item from the world after pickup
+        // // Add the item to the inventory (stacks if already present)
+        // inventory?.AddItem(this);
+        //
+        // // Mark the item as collected
+        // isCollected = true;
+        //
+        // // Hide the UI and destroy the item in the scene
+        // pickupUI.SetActive(false);
+        // if (itemRenderer)
+        // {
+        //     itemRenderer.enabled = false;  // Hide the item when picked up
+        // }
+        // Destroy(gameObject);  // Remove the item from the world after pickup
+        SceneManager.LoadScene("Slime Fight");
     }
  
     private static bool IsClickOnItem()

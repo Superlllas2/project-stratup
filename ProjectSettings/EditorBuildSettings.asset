@@ -9,8 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Super scene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/Fight.unity
+    path: Assets/Scenes/Slime Fight.unity
     guid: 53e548a1cad9b4599920921f9ae54d92
+  - enabled: 1
+    path: Assets/Scenes/Fragon Fight.unity
+    guid: 4fdfb266842624644b60b35d063d0127
+  - enabled: 1
+    path: Assets/Scenes/Super scene 1.unity
+    guid: 3442bc202068101418a7cd199a290589
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: c6c1427b7c92248729fc95dac66e8bae, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

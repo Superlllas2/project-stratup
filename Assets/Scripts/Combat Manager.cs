@@ -12,7 +12,7 @@ public class CombatManager : MonoBehaviour
     public TextMeshProUGUI bossHealthText;
 
     public int playerHealth = 100;
-    public int bossHealth = 100;
+    public int bossHealth;
 
     public GameObject playerDefeatedImage;  // Image to show when the player is defeated
     public GameObject bossDefeatedImage;    // Image to show when the boss is defeated
@@ -36,10 +36,6 @@ public class CombatManager : MonoBehaviour
 
     private void StartCombat()
     {
-        // Reset health at the start of the combat
-        playerHealth = 100;
-        bossHealth = 100;
-
         // Hide defeat images at the start
         playerDefeatedImage.SetActive(false);
         bossDefeatedImage.SetActive(false);
