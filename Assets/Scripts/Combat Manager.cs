@@ -22,6 +22,7 @@ public class CombatManager : MonoBehaviour
     
     public Button winButton;  // Button to attack
     public Button loseButton;
+    public Button leaveButton;
     
     public Canvas fightCanvas;
 
@@ -30,6 +31,7 @@ public class CombatManager : MonoBehaviour
     private void Start()
     {
         winButton.onClick.AddListener(winButtonOnClick);
+        leaveButton.onClick.AddListener(winButtonOnClick);
         loseButton.onClick.AddListener(loseButtonOnClick);
         StartCombat();
     }

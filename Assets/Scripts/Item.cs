@@ -25,6 +25,7 @@ public class Item : MonoBehaviour
     public bool isCollectible = true;
     public string itemName;
     public bool isVisible = false;
+    public String sceneToLoad;
 
     private Transform playerTransform; // Reference to the player's transform
     public GameObject pickupUI;        // The UI panel that will show the "Pick Up" button
@@ -62,14 +63,16 @@ public class Item : MonoBehaviour
             {
                 itemRenderer.enabled = true;  // Make the item visible
             }
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                if (IsClickOnItem())
-                {
-                    pickupUI.SetActive(true);  // Show the "Pick Up" UI
-                }
-            }
+            
+            pickupUI.SetActive(true);  // Show the "Pick Up" UI
+            //
+            // if (Input.GetMouseButtonDown(0))
+            // {
+            //     if (IsClickOnItem())
+            //     {
+            //         pickupUI.SetActive(true);  // Show the "Pick Up" UI
+            //     }
+            // }
         }
         else
         {
@@ -100,7 +103,7 @@ public class Item : MonoBehaviour
         //     itemRenderer.enabled = false;  // Hide the item when picked up
         // }
         // Destroy(gameObject);  // Remove the item from the world after pickup
-        SceneManager.LoadScene("Slime Fight");
+        SceneManager.LoadScene(sceneToLoad);
     }
  
     private static bool IsClickOnItem()
